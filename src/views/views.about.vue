@@ -1,0 +1,17 @@
+<template>
+  <main class="views-about">
+    <h1>This is an about page</h1>
+  </main>
+</template>
+
+<script>
+export default {
+  name: 'About',
+}
+</script>
+
+<style scoped>
+.views-about {
+
+}
+</style>
