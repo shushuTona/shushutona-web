@@ -1,5 +1,5 @@
 <template>
-  <header class="orga-header">
+  <header class="l-header">
     <div class="header__inner">
       <p class="header__logo">logo</p>
 
@@ -19,8 +19,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.orga-header {
+<style scoped lang="scss">
+.l-header {
 
 }
 </style>

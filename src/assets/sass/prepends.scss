@@ -1,0 +1,27 @@
+/*
+ *
+ * 変数
+ *
+ */
+$MAIN_COLOR: #009400;
+$ACCENT_COLOR: #ff5c28;
+$TRANSITION: .3s;
+
+/*
+ *
+ * mixin
+ *
+ */
+// PC表示
+@mixin breakPC() {
+    @media screen and (min-width: 760px) {
+        @content;
+    }
+}
+
+// SP表示（基本的にSPベースの記述だから局所的に使用する）
+@mixin breakPC() {
+    @media screen and (max-width: 759px) {
+        @content;
+    }
+}

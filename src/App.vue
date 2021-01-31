@@ -19,7 +19,8 @@ export default {
   }
 }
 </script>
-<style>
+
+<style lang="scss">
 *,
 *::before,
 *::after {
@@ -29,7 +30,23 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  color: #333;
+  font-size: 14px;
+
+  @include breakPC() {
+    font-size: 16px;
+  }
+}
+
+a,
+button {
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;;
 }
 
 p {

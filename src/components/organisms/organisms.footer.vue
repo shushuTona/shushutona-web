@@ -1,5 +1,5 @@
 <template>
-  <footer class="orga-footer">
+  <footer class="l-footer">
     <p>copy right. shushutona-web.</p>
   </footer>
 </template>
@@ -10,8 +10,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.orga-footer {
+<style scoped lang="scss">
+.l-footer {
 
 }
 </style>
