@@ -1,9 +1,9 @@
 <template>
-    <div class="m-btn">
+    <div class="m-btn" :class="{ 'is-emphasis': isEmphasis }">
         <button
             type="button"
             class="btn__inner"
-        >{{ btnText }}</button>
+        ><span class="btn__innerText">{{ btnText }}</span></button>
     </div>
 </template>
 
@@ -14,6 +14,10 @@ export default {
         btnText: {
             type: String,
             required: true
+        },
+        isEmphasis: {
+            type: Boolean,
+            default: false
         }
     }
 }
@@ -26,26 +30,66 @@ export default {
 
     .btn {
         &__inner {
-            padding: 5px 15px;
+            padding: 6px 15px 5px;
             color: #fff;
             background-color: $MAIN_COLOR;
             border: 1px solid $MAIN_COLOR;
             border-radius: 5px;
-            transition:
-                background-color $TRANSITION,
-                color $TRANSITION,
-                border-color $TRANSITION;
+            transition: color $TRANSITION;
             cursor: pointer;
+            overflow: hidden;
             position: relative;
+
+            // スライド背景色表示
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                transition: transform $TRANSITION;
+                transform: translateX(-102%);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
 
             &:hover,
             &:focus {
-                background-color: #fff;
                 color: $MAIN_COLOR;
-                border-color: $MAIN_COLOR;
+
+                &::before {
+                    transform: translateX(0);
+                }
             }
         }
 
+        &__innerText {
+            position: relative;
+        }
+    }
+
+    // 強調ボタン表示
+    &.is-emphasis {
+        .btn {
+            &__inner {
+                color: $MAIN_COLOR;
+                background-color: #fff;
+                border: 1px solid $MAIN_COLOR;
+
+                &::before {
+                    background-color: $MAIN_COLOR;
+                }
+
+                &:hover,
+                &:focus {
+                    color: #fff;
+                }
+            }
+
+            &__innerText {
+                position: relative;
+            }
+        }
     }
 }
 </style>

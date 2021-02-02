@@ -3,6 +3,7 @@
     <h1>This is an about page</h1>
 
     <Btn :btnText="'ボタンモジュール'" />
+    <Btn :btnText="'強調ボタンモジュール'" :isEmphasis="true" />
   </main>
 </template>
 
