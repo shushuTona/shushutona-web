@@ -1,10 +1,10 @@
 <template>
-  <main class="views-about">
+  <div class="views-about">
     <h1>This is an about page</h1>
 
     <Btn :btnText="'ボタンモジュール'" />
     <Btn :btnText="'強調ボタンモジュール'" :isEmphasis="true" />
-  </main>
+  </div>
 </template>
 
 <script>
@@ -20,6 +20,6 @@ export default {
 
 <style scoped lang="scss">
 .views-about {
-
+    @include resetMargin();
 }
 </style>

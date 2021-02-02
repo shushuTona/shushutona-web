@@ -6,6 +6,7 @@
 $MAIN_COLOR: #009400;
 $ACCENT_COLOR: #ff5c28;
 $TRANSITION: .3s;
+$CONTENT_WIDTH: 1024px;
 
 /*
  *
@@ -23,5 +24,16 @@ $TRANSITION: .3s;
 @mixin breakPC() {
     @media screen and (max-width: 759px) {
         @content;
+    }
+}
+
+// 直下の子要素のmarginを打ち消す。（子要素のmarginが親要素に関与しないため）
+@mixin resetMargin() {
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
     }
 }

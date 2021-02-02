@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
 
-    <router-view/>
+    <Main />
 
     <Footer />
   </div>
@@ -10,11 +10,13 @@
 
 <script>
 import Header from '@/components/organisms/organisms.header.vue';
+import Main from '@/components/organisms/organisms.main.vue';
 import Footer from '@/components/organisms/organisms.footer.vue';
 
 export default {
   components: {
     Header,
+    Main,
     Footer
   }
 }
@@ -27,14 +29,18 @@ export default {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   padding: 0;
   color: #333;
-  font-size: 14px;
+  font-size: 1.4rem;
 
   @include breakPC() {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 }
 
@@ -50,6 +56,15 @@ a:focus {
 }
 
 p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
