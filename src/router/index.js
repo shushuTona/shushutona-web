@@ -31,6 +31,10 @@ const routes = [
       return import( '../views/views.skill.vue' )
     }
   },
+  {
+    path: '*',
+    component: Home
+  }
 ];
 
 const router = new VueRouter( {
