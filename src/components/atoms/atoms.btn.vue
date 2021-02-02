@@ -36,21 +36,21 @@ export default {
             border: 1px solid $MAIN_COLOR;
             border-radius: 5px;
             transition: color $TRANSITION;
-            cursor: pointer;
             overflow: hidden;
             position: relative;
+            cursor: pointer;
 
             // スライド背景色表示
             &::before {
                 content: "";
-                width: 100%;
-                height: 100%;
+                width: calc(100% + 2px);
+                height: calc(100% + 2px);
                 background-color: #fff;
                 transition: transform $TRANSITION;
                 transform: translateX(-102%);
                 position: absolute;
-                top: 0;
-                left: 0;
+                top: -1px;
+                left: -1px;
             }
 
             &:hover,
