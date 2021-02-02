@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <Header />
+    <div id="app">
+        <Header />
 
-    <Main />
+        <Main />
 
-    <Footer />
-  </div>
+        <Footer />
+    </div>
 </template>
 
 <script>
@@ -14,11 +14,11 @@ import Main from '@/components/organisms/organisms.main.vue';
 import Footer from '@/components/organisms/organisms.footer.vue';
 
 export default {
-  components: {
-    Header,
-    Main,
-    Footer
-  }
+    components: {
+        Header,
+        Main,
+        Footer
+    }
 }
 </script>
 
@@ -26,37 +26,37 @@ export default {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  color: #333;
-  font-size: 1.4rem;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 1.4rem;
 
-  @include breakPC() {
-    font-size: 1.6rem;
-  }
+    @include breakPC() {
+        font-size: 1.6rem;
+    }
 }
 
 a,
 button {
-  outline: none;
-  text-decoration: none;
+    outline: none;
+    text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  text-decoration: underline;;
+    text-decoration: underline;;
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
 
 h1,
@@ -65,16 +65,16 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+    margin: 0;
 }
 
 ul,
 ol {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 </style>

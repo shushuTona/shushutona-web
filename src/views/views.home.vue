@@ -1,17 +1,22 @@
 <template>
-  <main class="views-home">
-    <h1>This is an home page</h1>
-  </main>
+  <div class="views-home">
+    <Heading1 :headingText="'This is an home page'" />
+  </div>
 </template>
 
 <script>
+import Heading1 from '@/components/atoms/atoms.heading1.vue';
+
 export default {
   name: 'Home',
+  components: {
+    Heading1
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .views-home {
-
+    @include resetMargin();
 }
 </style>

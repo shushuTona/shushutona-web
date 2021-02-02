@@ -1,7 +1,6 @@
 <template>
   <div class="views-about">
-    <h1>This is an about page</h1>
-
+    <Heading1 :headingText="'This is an about page'" />
     <Btn :btnText="'ボタンモジュール'" />
     <Btn :btnText="'強調ボタンモジュール'" :isEmphasis="true" />
   </div>
@@ -9,11 +8,13 @@
 
 <script>
 import Btn from '@/components/atoms/atoms.btn.vue';
+import Heading1 from '@/components/atoms/atoms.heading1.vue';
 
 export default {
   name: 'About',
   components: {
-    Btn
+    Btn,
+    Heading1
   }
 }
 </script>

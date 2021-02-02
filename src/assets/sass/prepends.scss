@@ -4,6 +4,7 @@
  *
  */
 $MAIN_COLOR: #009400;
+$SUB_COLOR: #360094;
 $ACCENT_COLOR: #ff5c28;
 $TRANSITION: .3s;
 $CONTENT_WIDTH: 1024px;
@@ -21,7 +22,7 @@ $CONTENT_WIDTH: 1024px;
 }
 
 // SP表示（基本的にSPベースの記述だから局所的に使用する）
-@mixin breakPC() {
+@mixin breakSP() {
     @media screen and (max-width: 759px) {
         @content;
     }
