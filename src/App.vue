@@ -1,9 +1,7 @@
 <template>
     <div id="app">
         <Header />
-
         <Main />
-
         <Footer />
     </div>
 </template>
@@ -36,8 +34,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-    color: #333;
+    color: $FONT_COLOR;
     font-size: 1.4rem;
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 
     @include breakPC() {
         font-size: 1.6rem;
@@ -76,5 +75,15 @@ ol {
 
 li {
     list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+#app {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: fit-content(100%) 1fr fit-content(100%);
 }
 </style>

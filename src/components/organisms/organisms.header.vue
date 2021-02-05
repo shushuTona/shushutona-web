@@ -21,7 +21,23 @@ export default {
 
 <style scoped lang="scss">
 .l-header {
+    padding: 0 20px;
+    grid-row: 1 / 2;
+
     .header {
+        &__inner {
+            margin: 0 auto;
+            padding: 12px 0;
+            width: 100%;
+            max-width: $CONTENT_WIDTH;
+            position: relative;
+            z-index: 1;
+
+            @include breakPC() {
+                padding: 24px 0;
+            }
+        }
+
         &__logo {
             text-align: center;
         }
