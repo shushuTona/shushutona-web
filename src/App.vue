@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 *,
 *::before,
 *::after {
@@ -36,7 +38,7 @@ body {
     padding: 0;
     color: $FONT_COLOR;
     font-size: 1.4rem;
-    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-family: "Quicksand", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 
     @include breakPC() {
         font-size: 1.6rem;
@@ -65,6 +67,7 @@ h4,
 h5,
 h6 {
     margin: 0;
+    font-weight: 300;
 }
 
 ul,

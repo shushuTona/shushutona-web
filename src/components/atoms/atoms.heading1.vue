@@ -1,12 +1,12 @@
 <template>
-    <h2 class="m-heading2">
-        <span class="heading2__inner">{{ headingText }}</span>
-    </h2>
+    <h1 class="m-heading1">
+        <span class="heading1__inner">{{ headingText }}</span>
+    </h1>
 </template>
 
 <script>
 export default {
-    name: 'Heading2',
+    name: 'Heading1',
     props: {
         headingText: {
             type: String,
@@ -27,10 +27,9 @@ export default {
     }
 }
 
-.m-heading2 {
+.m-heading1 {
     margin: 48px 0 24px;
     padding: 0 0 15px;
-    font-weight: bold;
     font-size: 3.6rem;
 
     @include breakPC() {
@@ -39,7 +38,7 @@ export default {
         font-size: 4.8rem;
     }
 
-    .heading2 {
+    .heading1 {
         &__inner {
             position: relative;
             z-index: 1;

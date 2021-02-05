@@ -1,7 +1,7 @@
 <template>
     <main class="l-main">
         <router-view/>
-        <canvas class="main__canvas"></canvas>
+        <canvas class="main__canvas" ref="canvas"></canvas>
     </main>
 </template>
 

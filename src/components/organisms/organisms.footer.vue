@@ -1,6 +1,6 @@
 <template>
     <footer class="l-footer">
-        <p>copy right. shushutona-web.</p>
+        <p>© 2020 shushutona-web.</p>
     </footer>
 </template>
 
