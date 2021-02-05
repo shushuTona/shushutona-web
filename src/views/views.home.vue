@@ -1,17 +1,17 @@
 <template>
-  <div class="views-home">
-    <Heading1 :headingText="'This is an home page'" />
-  </div>
+    <div class="views-home">
+        <Heading1 :headingText="'This is an home page'" />
+    </div>
 </template>
 
 <script>
 import Heading1 from '@/components/atoms/atoms.heading1.vue';
 
 export default {
-  name: 'Home',
-  components: {
-    Heading1
-  }
+    name: 'Home',
+    components: {
+        Heading1
+    }
 }
 </script>
 

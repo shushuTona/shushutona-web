@@ -1,12 +1,12 @@
 <template>
-  <footer class="l-footer">
-    <p>copy right. shushutona-web.</p>
-  </footer>
+    <footer class="l-footer">
+        <p>copy right. shushutona-web.</p>
+    </footer>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+    name: 'Footer'
 }
 </script>
 

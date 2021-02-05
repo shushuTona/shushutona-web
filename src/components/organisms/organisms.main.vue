@@ -1,23 +1,23 @@
 <template>
     <main class="l-main">
-      <router-view/>
+        <router-view/>
     </main>
 </template>
 
 <script>
 export default {
-  name: 'Main'
+    name: 'Main'
 }
 </script>
 
 <style scoped lang="scss">
 .l-main {
-  padding: 0 20px;
+    padding: 0 20px;
 
-  & > [class^="views-"] {
-    margin: 0 auto;
-    width: 100%;
-    max-width: $CONTENT_WIDTH;
-  }
+    & > [class^="views-"] {
+        margin: 0 auto;
+        width: 100%;
+        max-width: $CONTENT_WIDTH;
+    }
 }
 </style>
