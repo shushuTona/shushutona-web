@@ -1,7 +1,7 @@
 <template>
     <header class="l-header">
         <div class="header__inner">
-            <p class="header__logo">logo</p>
+            <h1 class="header__logo">logo</h1>
 
             <HeaderNav />
         </div>

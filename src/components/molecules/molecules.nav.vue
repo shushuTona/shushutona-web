@@ -16,5 +16,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.header {
+    &__nav {
 
+    }
+
+    &__navList {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__navListItem {
+        & + .header__navListItem {
+            margin-left: 40px;
+        }
+
+        a {
+            display: block;
+            font-size: 1.6em;
+            text-decoration: none;
+            color: $FONT_COLOR;
+
+            @include breakPC() {
+                font-size: 2.4rem;
+            }
+        }
+    }
+}
 </style>

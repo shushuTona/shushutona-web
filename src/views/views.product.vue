@@ -1,16 +1,16 @@
 <template>
     <div class="views-product">
-        <Heading1 :headingText="'This is an product page'" />
+        <Heading2 :headingText="'This is an product page'" />
     </div>
 </template>
 
 <script>
-import Heading1 from '@/components/atoms/atoms.heading1.vue';
+import Heading2 from '@/components/atoms/atoms.heading2.vue';
 
 export default {
     name: 'Product',
     components: {
-        Heading1
+        Heading2
     }
 }
 </script>
