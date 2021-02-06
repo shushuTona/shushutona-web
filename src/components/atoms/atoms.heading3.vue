@@ -1,12 +1,12 @@
 <template>
-    <h2 class="m-heading2">
-        <span class="heading2__inner">{{ headingText }}</span>
-    </h2>
+    <h3 class="m-heading3">
+        <span class="heading3__inner">{{ headingText }}</span>
+    </h3>
 </template>
 
 <script>
 export default {
-    name: 'Heading2',
+    name: 'Heading3',
     props: {
         headingText: {
             type: String,
@@ -17,10 +17,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.m-heading2 {
-    @include createHeadingValue(2);
+.m-heading3 {
+    font-weight: bold;
 
-    .heading2 {
+    @include createHeadingValue(1);
+
+    .heading3 {
         &__inner {
             padding: 0 0 0 calc(#{$HEADING_FONT_BASE_VALUE} * 3);
             display: block;
@@ -29,11 +31,11 @@ export default {
 
             &::before {
                 content: '';
-                width: 10px;
-                height: 10px;
-                background-color: $MAIN_COLOR;
+                width: 5px;
+                height: 5px;
+                background-color: $SUB_COLOR;
                 position: absolute;
-                top: calc(1em * 1.5 / 2 - 5px);
+                top: calc(1em * 1.5 / 2 - 3px);
                 left: 0;
             }
         }

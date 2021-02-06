@@ -11,6 +11,7 @@ $TRANSITION: .3s;
 $CONTENT_WIDTH: 1024px;
 $PC_FONT_BASE: 1.6rem;
 $SP_FONT_BASE: 1.4rem;
+$HEADING_FONT_BASE_VALUE: .8rem;
 
 /*
  *
@@ -43,7 +44,6 @@ $SP_FONT_BASE: 1.4rem;
 }
 
 @mixin createHeadingValue($font_value) {
-    $HEADING_FONT_BASE_VALUE: .8rem;
     $PC_HEADING_VALUE: calc(#{$HEADING_FONT_BASE_VALUE} * 2 * #{$font_value});
     $SP_HEADING_VALUE: calc(#{$HEADING_FONT_BASE_VALUE} * #{$font_value + 1});
 
