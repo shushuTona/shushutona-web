@@ -29,14 +29,22 @@ export default {
             position: relative;
             z-index: 1;
 
+            @include breakPC() {
+                padding-left: calc(#{$HEADING_FONT_BASE_VALUE} * 4);
+            }
+
             &::before {
                 content: '';
                 width: 5px;
-                height: 5px;
+                height: 10px;
                 background-color: $SUB_COLOR;
                 position: absolute;
-                top: calc(1em * 1.5 / 2 - 3px);
+                top: calc(1em * 1.5 / 2 - 5px);
                 left: 0;
+
+                @include breakPC() {
+                    width: 10px;
+                }
             }
         }
     }
