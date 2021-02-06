@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <Header />
-        <Main />
-        <Footer />
+        <Header class="app-grid1" />
+        <Main class="app-grid2" />
+        <Footer class="app-grid3" />
     </div>
 </template>
 
@@ -39,6 +39,7 @@ body {
     color: $FONT_COLOR;
     font-size: 1.4rem;
     font-family: "Quicksand", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-display: optional;
 
     @include breakPC() {
         font-size: 1.6rem;
@@ -88,5 +89,17 @@ img {
     height: 100vh;
     display: grid;
     grid-template-rows: fit-content(100%) 1fr fit-content(100%);
+}
+
+.app-grid1 {
+    grid-row: 1 / 2;
+}
+
+.app-grid2 {
+    grid-row: 2 / 3;
+}
+
+.app-grid3 {
+    grid-row: 3 / 4;
 }
 </style>

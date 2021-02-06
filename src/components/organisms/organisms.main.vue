@@ -13,8 +13,6 @@ export default {
 
 <style scoped lang="scss">
 .l-main {
-    grid-row: 2 / 3;
-
     & > [class^="views-"] {
         margin: 0 auto;
         padding: 0 24px;

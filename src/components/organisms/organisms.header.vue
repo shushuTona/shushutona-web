@@ -20,7 +20,6 @@ export default {
 <style scoped lang="scss">
 .l-header {
     padding: 0 20px;
-    grid-row: 1 / 2;
 
     .header {
         &__inner {
