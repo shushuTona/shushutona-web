@@ -24,47 +24,116 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .m-btn {
     margin: 15px 0;
     text-align: center;
 
     .btn {
         &__inner {
-            padding: 6px 15px 5px;
-            color: #fff;
-            background-color: $MAIN_COLOR;
-            border: 1px solid $MAIN_COLOR;
-            border-radius: 5px;
-            transition: color $TRANSITION;
+            padding: 0;
+            color: $MAIN_COLOR;
+            background-color: #fff;
+            border: none;
             overflow: hidden;
+            transition:
+                background-color $TRANSITION,
+                color $TRANSITION;
+            transition-delay: $TRANSITION * 0;
             position: relative;
             cursor: pointer;
 
-            // スライド背景色表示
-            &::before {
+            &::before,
+            &::after {
                 content: "";
-                width: calc(100% + 2px);
-                height: calc(100% + 2px);
-                background-color: #fff;
+                width: 100%;
+                height: 1px;
+                background-color: $MAIN_COLOR;
                 transition: transform $TRANSITION;
-                transform: translateX(-102%);
                 position: absolute;
-                top: -1px;
-                left: -1px;
+                left: 0;
             }
 
-            &:hover,
-            &:focus {
-                color: $MAIN_COLOR;
+            // 上
+            &::before {
+                transform-origin: right;
+                transition-delay: $TRANSITION * 4;
+                top: 0;
+            }
 
+            // 下
+            &::after {
+                transform-origin: left;
+                transition-delay: $TRANSITION * 2;
+                bottom: 0;
+            }
+
+            @include hover() {
+                transition-delay: $TRANSITION * 4;
+                color: #fff;
+                background-color: $MAIN_COLOR;
+
+                // 上
                 &::before {
-                    transform: translateX(0);
+                    transform-origin: right;
+                    transition-delay: $TRANSITION * 0;
+                    transform: scaleX(0);
+                }
+
+                // 下
+                &::after {
+                    transform-origin: left;
+                    transition-delay: $TRANSITION * 2;
+                    transform: scaleX(0);
+                }
+
+                .btn__innerText {
+                    // 右
+                    &::before {
+                        transform-origin: bottom;
+                        transition-delay: $TRANSITION * 1;
+                        transform: scaleY(0);
+                    }
+
+                    // 左
+                    &::after {
+                        transform-origin: top;
+                        transition-delay: $TRANSITION * 3;
+                        transform: scaleY(0);
+                    }
                 }
             }
         }
 
         &__innerText {
+            padding: 11px 15px 10px;
+            display: block;
             position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                width: 1px;
+                height: 100%;
+                background-color: $MAIN_COLOR;
+                transition: transform $TRANSITION;
+                position: absolute;
+                top: 0;
+            }
+
+            // 右
+            &::before {
+                transform-origin: bottom;
+                transition-delay: $TRANSITION * 3;
+                right: 0;
+            }
+
+            // 左
+            &::after {
+                transform-origin: top;
+                transition-delay: $TRANSITION * 1;
+                left: 0;
+            }
         }
     }
 
@@ -72,22 +141,25 @@ export default {
     &.is-emphasis {
         .btn {
             &__inner {
-                color: $MAIN_COLOR;
+                color: $SUB_COLOR;
                 background-color: #fff;
-                border: 1px solid $MAIN_COLOR;
 
-                &::before {
-                    background-color: $MAIN_COLOR;
+                &::before,
+                &::after {
+                    background-color: $SUB_COLOR;
                 }
 
-                &:hover,
-                &:focus {
+                @include hover() {
                     color: #fff;
+                    background-color: $SUB_COLOR;
                 }
             }
 
             &__innerText {
-                position: relative;
+                &::before,
+                &::after {
+                    background-color: $SUB_COLOR;
+                }
             }
         }
     }

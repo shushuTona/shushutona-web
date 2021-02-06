@@ -61,3 +61,12 @@ $HEADING_FONT_BASE_VALUE: .8rem;
         font-size: $PC_HEADING_VALUE;
     }
 }
+
+@mixin hover() {
+    @include breakPC() {
+        &:hover,
+        &:focus {
+            @content;
+        }
+    }
+}
