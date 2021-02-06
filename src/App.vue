@@ -37,12 +37,13 @@ body {
     margin: 0;
     padding: 0;
     color: $FONT_COLOR;
-    font-size: 1.4rem;
     font-family: "Quicksand", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
     font-display: optional;
+    font-size: $SP_FONT_BASE;
+    line-height: 1.5;
 
     @include breakPC() {
-        font-size: 1.6rem;
+        font-size: $PC_FONT_BASE;
     }
 }
 

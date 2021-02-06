@@ -9,6 +9,8 @@ $ACCENT_COLOR: #ff5c28;
 $FONT_COLOR: #333;
 $TRANSITION: .3s;
 $CONTENT_WIDTH: 1024px;
+$PC_FONT_BASE: 1.6rem;
+$SP_FONT_BASE: 1.4rem;
 
 /*
  *
@@ -37,5 +39,25 @@ $CONTENT_WIDTH: 1024px;
 
     & > *:last-child {
         margin-bottom: 0;
+    }
+}
+
+@mixin createHeadingValue($font_value) {
+    $HEADING_FONT_BASE_VALUE: .8rem;
+    $PC_HEADING_VALUE: calc(#{$HEADING_FONT_BASE_VALUE} * 2 * #{$font_value});
+    $SP_HEADING_VALUE: calc(#{$HEADING_FONT_BASE_VALUE} * #{$font_value + 1});
+
+    margin:
+        calc(#{$SP_HEADING_VALUE} + #{$HEADING_FONT_BASE_VALUE})
+        0
+        $SP_HEADING_VALUE;
+    font-size: $SP_HEADING_VALUE;
+
+    @include breakPC() {
+        margin:
+            calc(#{$PC_HEADING_VALUE} + #{$HEADING_FONT_BASE_VALUE})
+            0
+            $PC_HEADING_VALUE;
+        font-size: $PC_HEADING_VALUE;
     }
 }

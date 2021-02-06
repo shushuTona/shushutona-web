@@ -28,18 +28,17 @@ export default {
 }
 
 .m-heading1 {
-    margin: 48px 0 24px;
-    padding: 0 0 15px;
-    font-size: 3.6rem;
+    padding: 0 0 10px;
+
+    @include createHeadingValue(3);
 
     @include breakPC() {
-        margin: 60px 0 36px;
-        padding: 0 0 25px;
-        font-size: 4.8rem;
+        padding: 0 0 20px;
     }
 
     .heading1 {
         &__inner {
+            display: block;
             position: relative;
             z-index: 1;
 
@@ -54,7 +53,7 @@ export default {
                 z-index: -1;
 
                 animation-name: initHeading;
-                animation-duration: 1s;
+                animation-duration: 1.5s;
                 animation-fill-mode: both;
 
                 @include breakPC() {
@@ -64,26 +63,26 @@ export default {
 
             &::before {
                 background-color: $MAIN_COLOR;
-                bottom: -10px;
+                bottom: -5px;
                 max-width: 200px;
 
                 animation-delay: .5s;
 
                 @include breakPC() {
-                    bottom: -15px;
+                    bottom: -10px;
                     max-width: 300px;
                 }
             }
 
             &::after {
                 background-color: $SUB_COLOR;
-                bottom: -15px;
+                bottom: -10px;
                 max-width: 160px;
 
                 animation-delay: .75s;
 
                 @include breakPC() {
-                    bottom: -25px;
+                    bottom: -20px;
                     max-width: 240px;
                 }
             }
