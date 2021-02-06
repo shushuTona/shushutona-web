@@ -5,6 +5,7 @@
         <Heading3 :headingText="'h3 heading'" />
         <Btn :btnText="'ボタンモジュール'" />
         <Btn :btnText="'強調ボタンモジュール'" :isEmphasis="true" />
+        <List :list="listArray" />
     </div>
 </template>
 
@@ -13,6 +14,7 @@ import Btn from '@/components/atoms/atoms.btn.vue';
 import Heading1 from '@/components/atoms/atoms.heading1.vue';
 import Heading2 from '@/components/atoms/atoms.heading2.vue';
 import Heading3 from '@/components/atoms/atoms.heading3.vue';
+import List from '@/components/atoms/atoms.list.vue';
 
 export default {
     name: 'About',
@@ -20,7 +22,26 @@ export default {
         Btn,
         Heading1,
         Heading2,
-        Heading3
+        Heading3,
+        List
+    },
+    data() {
+        return {
+            listArray: [
+                {
+                    id: 0,
+                    content: 'hoge'
+                },
+                {
+                    id: 1,
+                    content: 'piyo'
+                },
+                {
+                    id: 2,
+                    content: 'fuga'
+                }
+            ]
+        }
     }
 }
 </script>
