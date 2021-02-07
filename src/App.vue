@@ -16,6 +16,9 @@ export default {
         Header,
         Main,
         Footer
+    },
+    beforeCreate() {
+        this.$store.dispatch('initUserObj');
     }
 }
 </script>
