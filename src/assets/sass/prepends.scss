@@ -48,14 +48,14 @@ $HEADING_FONT_BASE_VALUE: .8rem;
     $SP_HEADING_VALUE: calc(#{$HEADING_FONT_BASE_VALUE} * #{$font_value + 1});
 
     margin:
-        calc(#{$SP_HEADING_VALUE} + #{$HEADING_FONT_BASE_VALUE})
+        calc(#{$SP_HEADING_VALUE} + #{$HEADING_FONT_BASE_VALUE * 3})
         0
         $SP_HEADING_VALUE;
     font-size: $SP_HEADING_VALUE;
 
     @include breakPC() {
         margin:
-            calc(#{$PC_HEADING_VALUE} + #{$HEADING_FONT_BASE_VALUE})
+            calc(#{$PC_HEADING_VALUE} + #{$HEADING_FONT_BASE_VALUE * 3})
             0
             $PC_HEADING_VALUE;
         font-size: $PC_HEADING_VALUE;

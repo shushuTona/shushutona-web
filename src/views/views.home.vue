@@ -1,6 +1,8 @@
 <template>
     <div class="views-home">
-        <Heading1 :headingText="'This is an home page'" />
+        <Heading1 :headingText="'Shushutona-web'" />
+
+        <p><a href="/">ddddd</a></p>
     </div>
 </template>
 

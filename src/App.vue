@@ -44,6 +44,7 @@ body {
     font-display: optional;
     font-size: $SP_FONT_BASE;
     line-height: 1.5;
+    word-break: break-word;
 
     @include breakPC() {
         font-size: $PC_FONT_BASE;
@@ -63,6 +64,10 @@ a:focus {
 
 p {
     margin: 0;
+}
+
+p + p {
+    margin-top: 1em;
 }
 
 h1,
