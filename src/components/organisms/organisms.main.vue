@@ -3,6 +3,9 @@
         <transition
             name="fade"
             mode="out-in"
+            appear
+            appear-class="appear-fade"
+            appear-active-class="appear-active-fade"
         >
             <router-view/>
         </transition>
@@ -36,6 +39,14 @@ export default {
     &-leave-to {
         opacity: 0;
     }
+}
+
+.appear-fade {
+    opacity: 0;
+}
+
+.appear-active-fade {
+    transition: opacity 1s;
 }
 
 .l-main {
