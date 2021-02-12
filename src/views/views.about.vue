@@ -33,6 +33,9 @@ export default {
         FirstView,
         Table
     },
+    created() {
+        document.title = 'About | shushutona-web';
+    },
     data() {
         return {
             tableList: [

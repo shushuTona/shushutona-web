@@ -17,6 +17,9 @@ export default {
     components: {
         Heading1,
         FirstView
+    },
+    created() {
+        document.title = 'Product | shushutona-web';
     }
 }
 </script>

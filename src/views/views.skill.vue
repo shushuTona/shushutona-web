@@ -41,6 +41,9 @@ export default {
         List,
         FirstView
     },
+    created() {
+        document.title = 'Skill | shushutona-web';
+    },
     data() {
         return {
             idCount: 0,

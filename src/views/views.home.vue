@@ -13,6 +13,9 @@ export default {
     name: 'Home',
     components: {
         Heading1
+    },
+    created() {
+        document.title = 'shushutona-web';
     }
 }
 </script>
