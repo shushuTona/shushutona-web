@@ -28,8 +28,12 @@ export default {
 .m-firstView {
     @include resetMargin();
 
-    height: calc(100vh - 84px);
+    height: calc(100vh - 32px);
     position: relative;
+
+    @include breakPC() {
+        height: calc(100vh - 84px);
+    }
 
     &::after {
         content: "";

@@ -52,11 +52,15 @@ export default {
 .l-main {
     & > [class^="views-"] {
         margin: 0 auto;
-        padding: 0 24px 64px;
+        padding: 32px 24px 48px;
         width: 100%;
         max-width: $CONTENT_WIDTH;
         position: relative;
         z-index: 1;
+
+        @include breakPC() {
+            padding: 0 24px 64px;
+        }
     }
 
     .main {
