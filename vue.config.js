@@ -1,5 +1,6 @@
 const path = require( 'path' );
 const PrerenderSPAPlugin = require( 'prerender-spa-plugin' );
+const TerserPlugin = require( 'terser-webpack-plugin' );
 
 module.exports = {
     css: {
@@ -9,7 +10,7 @@ module.exports = {
             }
         }
     },
-    configureWebpack: (config) => {
+    configureWebpack: ( config ) => {
         if ( process.env.NODE_ENV === 'production' ) {
             return {
                 plugins: [
@@ -24,6 +25,29 @@ module.exports = {
                     } )
                 ]
             }
+        }
+
+        config.optimization = {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin( {
+                    terserOptions: {
+                        ecma: undefined,
+                        warnings: false,
+                        parse: {},
+                        compress: { drop_console: true },
+                        mangle: true, // Note `mangle.properties` is `false` by default.
+                        module: false,
+                        output: { comments: false },
+                        toplevel: false,
+                        nameCache: null,
+                        ie8: false,
+                        keep_classnames: undefined,
+                        keep_fnames: false,
+                        safari10: false,
+                    },
+                } ),
+            ],
         }
     }
 };
