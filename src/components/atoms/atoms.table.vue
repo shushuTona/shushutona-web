@@ -53,17 +53,27 @@ export default {
 
             th,
             td {
-                padding: 16px 0;
+                @include breakSP() {
+                    display: block;
+                }
             }
 
             th {
+                padding: 16px 0 8px;
                 font-weight: normal;
                 text-align: left;
-                padding-right: 16px;
+
+                @include breakPC() {
+                    padding: 16px 8px 16px 0;
+                }
             }
 
             td {
-                padding-left: 16px;
+                padding: 8px 0 16px;
+
+                @include breakPC() {
+                    padding: 16px 0 16px 8px;
+                }
             }
         }
 
