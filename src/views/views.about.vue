@@ -3,19 +3,21 @@
         <FirstView>
             <Heading1 :headingText="'About'" />
 
-            <p>僕に関しての軽い説明</p>
+            <p>僕に関しての説明</p>
         </FirstView>
 
         <Heading2 :headingText="'自己紹介'" />
-        <p>フロントエンドのエンジニアとして都内の事業会社で働いています。最近転職しました。</p>
+        <p>現在は都内の事業会社でwebエンジニアとして働いています。最近転職しました。</p>
+        <p>好きな色は緑。好きな野菜はレタスです。</p>
+
+        <Heading2 :headingText="'職務経歴'" />
+
+        <p>大学4年生の就職活動時にwebの勉強を始めて、以下の経歴で生きてきました。</p>
 
         <Table :tableList="tableList" />
 
         <Heading2 :headingText="'Twitter'" />
-        <p>Twitterのタイムラインを表示する。</p>
-
-        <Heading2 :headingText="'Github'" />
-        <p>Githubのの更新情報を表示する。</p>
+        <p>TODO：Twitterのタイムラインを表示する。</p>
     </div>
 </template>
 
@@ -47,7 +49,7 @@ export default {
                     tdList: [
                         {
                             id: 0,
-                            content: '新宿のweb制作会社でフロントエンドエンジニアとして勤務'
+                            content: '新宿のweb制作会社でフロントエンドエンジニアとして勤務していました。企業のコーポレートサイトのリニューアル案件を主に扱っていました。'
                         }
                     ]
                 },
@@ -59,7 +61,7 @@ export default {
                     tdList: [
                         {
                             id: 0,
-                            content: '新宿の事業会社でエンジニアとして勤務'
+                            content: '新宿の事業会社でwebエンジニアとして勤務しています。'
                         }
                     ]
                 }

@@ -59,7 +59,7 @@ button {
 
 a:hover,
 a:focus {
-    text-decoration: underline;;
+    text-decoration: underline;
 }
 
 p {

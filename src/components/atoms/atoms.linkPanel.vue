@@ -45,15 +45,19 @@ export default {
         &__link {
             padding: 16px 24px;
             width: 100%;
-            display: flex;
-            align-items: flex-start;
+            display: block;
             color: $FONT_COLOR;
             border: 1px solid $BORDER_COLOR;
-            transition:
-                border-color $TRANSITION,
-                color $TRANSITION;
             text-decoration: none;
-            position: relative;
+
+            @include breakPC() {
+                display: flex;
+                align-items: flex-start;
+                transition:
+                    border-color $TRANSITION,
+                    color $TRANSITION;
+                position: relative;
+            }
 
             &::before {
                 content: '';
@@ -78,17 +82,21 @@ export default {
         }
 
         &__mainText {
-            font-size: 1.6rem;
+            display: block;
+            margin: 8px 0 0;
+
+            @include breakPC() {
+                margin: 0;
+            }
         }
 
         &__subText {
+            display: block;
             flex-shrink: 0;
             position: relative;
             z-index: 1;
 
             & + .linkPanel__mainText {
-                margin-left: $SP_FONT_BASE;
-
                 @include breakPC() {
                     margin-left: $PC_FONT_BASE;
                 }
