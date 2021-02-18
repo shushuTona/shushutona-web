@@ -8,6 +8,7 @@ export default new Vuex.Store( {
         githubName: 'shushutona', // readonly
         userObj: {},
         reposArray: [],
+        reposUrlNameObj: {},
         langArray: [],
         commitLinkArray: []
     },
@@ -17,6 +18,9 @@ export default new Vuex.Store( {
         },
         setUserRepos ( state, payload ) {
             state.reposArray = payload.reposArray
+        },
+        setReposUrlNameObj ( state, payload ) {
+            state.reposUrlNameObj = payload.reposUrlNameObj
         },
         setLangArray ( state, payload ) {
             state.langArray = payload.langArray
@@ -34,17 +38,23 @@ export default new Vuex.Store( {
 
             context.commit( 'setUserObj', { userObj } );
 
-            context.dispatch( 'getCommitLinkArray' );
             await context.dispatch( 'getUserRepos' );
+            await context.dispatch( 'getCommitLinkArray' );
             await context.dispatch( 'getLangArray' );
         },
 
-        // リポジトリ一覧取得（repos_url）
+        // リポジトリ一覧取得（repos_url）&リポジトリ名：URLのオブジェクトを生成
         async getUserRepos ( context ) {
             const fetchURL = context.state.userObj[ 'repos_url' ];
             const response = await fetch( fetchURL );
             const reposArray = await response.json();
 
+            const reposUrlNameObj = {};
+            reposArray.forEach(( reposObj ) => {
+                reposUrlNameObj[ reposObj.name ] = reposObj.html_url;
+            } );
+
+            context.commit( 'setReposUrlNameObj', { reposUrlNameObj } );
             context.commit( 'setUserRepos', { reposArray } );
         },
 
@@ -90,13 +100,13 @@ export default new Vuex.Store( {
                 const dateHours = `${ date.getHours()}`.padStart( 2, 0 );
                 const dateMinutes = `${ date.getMinutes() }`.padStart( 2, 0 );
 
-                console.log( commitObj );
+                const reposUrl = context.state.reposUrlNameObj[ commitObj.repo.name.replace( 'shushuTona/', '' ) ];
 
                 return {
                     id: index,
                     subLinkText: `${ date.getFullYear() }/${ dateMonth }/${ dateDate } : ${ dateHours }:${ dateMinutes }`,
                     mainLinkText: commitObj.payload.commits[ 0 ].message,
-                    linkHref: commitObj.repo.url
+                    linkHref: reposUrl
                 }
             } );
 
