@@ -59,7 +59,7 @@ export default {
 
             // 各言語の重複重複削除＆値の合計
             let baseLangObj = {};
-            for (let langObj of this.$store.state.langArray) {
+            for (let langObj of this.langArray) {
                 for (let langName in langObj) {
                     if (
                         Object.prototype.hasOwnProperty.call( baseLangObj, langName )

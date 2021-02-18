@@ -88,13 +88,15 @@ export default new Vuex.Store( {
                 const dateMonth = `${date.getMonth() + 1}`.padStart( 2, 0 );
                 const dateDate = `${ date.getDate() }`.padStart( 2, 0 );
                 const dateHours = `${ date.getHours()}`.padStart( 2, 0 );
-                const dateMinutes = `${ date.getMinutes()}`.padStart( 2, 0 );
+                const dateMinutes = `${ date.getMinutes() }`.padStart( 2, 0 );
+
+                console.log( commitObj );
 
                 return {
                     id: index,
-                    dateStr: `${ date.getFullYear() }/${ dateMonth }/${ dateDate } : ${ dateHours }:${ dateMinutes }`,
-                    commitMessageStr: commitObj.payload.commits[ 0 ].message,
-                    repoUrlStr: commitObj.repo.url
+                    subLinkText: `${ date.getFullYear() }/${ dateMonth }/${ dateDate } : ${ dateHours }:${ dateMinutes }`,
+                    mainLinkText: commitObj.payload.commits[ 0 ].message,
+                    linkHref: commitObj.repo.url
                 }
             } );
 

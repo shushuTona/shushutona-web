@@ -1,9 +1,10 @@
 <template>
-    <div class="m-btn" :class="{ 'is-emphasis': isEmphasis }">
-        <button
-            type="button"
-            class="btn__inner"
-        ><span class="btn__innerText">{{ btnText }}</span></button>
+    <div class="m-btnLink" :class="{ 'is-emphasis': isEmphasis }">
+        <a
+            class="btnLink__inner"
+            :href="linkHref"
+            :target="isBlank ? '_blank' : false"
+        ><span class="btnLink__innerText">{{ linkText }}</span></a>
     </div>
 </template>
 
@@ -11,9 +12,17 @@
 export default {
     name: 'Btn',
     props: {
-        btnText: {
+        linkText: {
             type: String,
             required: true
+        },
+        linkHref: {
+            type: String,
+            required: true
+        },
+        isBlank: {
+            type: Boolean,
+            default: false
         },
         isEmphasis: {
             type: Boolean,
@@ -24,14 +33,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.m-btn {
-    margin: 15px 0;
+.m-btnLink {
+    margin: 24px 0;
     text-align: center;
 
-    .btn {
+    .btnLink {
         &__inner {
             padding: 0;
+            display: inline-block;
             color: $MAIN_COLOR;
             background-color: #fff;
             border: none;
@@ -40,6 +49,7 @@ export default {
                 background-color $TRANSITION,
                 color $TRANSITION;
             transition-delay: $TRANSITION * 0;
+            text-decoration: none;
             position: relative;
             cursor: pointer;
 
@@ -50,6 +60,8 @@ export default {
                 height: 1px;
                 background-color: $MAIN_COLOR;
                 transition: transform $TRANSITION;
+                -webkit-backface-visibility: hidden; // borderがにじむ為
+                backface-visibility: hidden;
                 position: absolute;
                 left: 0;
             }
@@ -87,7 +99,7 @@ export default {
                     transform: scaleX(0);
                 }
 
-                .btn__innerText {
+                .btnLink__innerText {
                     // 右
                     &::before {
                         transform-origin: bottom;
@@ -106,8 +118,8 @@ export default {
         }
 
         &__innerText {
-            padding: 11px 15px 10px;
-            display: block;
+            padding: 16px 24px 16px;
+            display: inline-block;
             position: relative;
 
             &::before,
@@ -139,7 +151,7 @@ export default {
 
     // 強調ボタン表示
     &.is-emphasis {
-        .btn {
+        .btnLink {
             &__inner {
                 color: $SUB_COLOR;
                 background-color: #fff;
