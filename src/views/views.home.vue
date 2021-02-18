@@ -20,6 +20,11 @@ export default {
     },
     created() {
         document.title = 'shushutona-web';
+    },
+    computed: {
+        commitLinkArray() {
+            return this.$store.state.commitLinkArray;
+        }
     }
 }
 </script>

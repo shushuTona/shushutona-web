@@ -5,9 +5,11 @@ Vue.use( Vuex );
 
 export default new Vuex.Store( {
     state: {
+        githubName: 'shushutona', // readonly
         userObj: {},
         reposArray: [],
-        langArray: []
+        langArray: [],
+        commitLinkArray: []
     },
     mutations: {
         setUserObj ( state, payload ) {
@@ -19,35 +21,31 @@ export default new Vuex.Store( {
         setLangArray ( state, payload ) {
             state.langArray = payload.langArray
         },
+        setCommitLinkArray ( state, payload ) {
+            state.commitLinkArray = payload.commitLinkArray
+        },
     },
     actions: {
         // 指定ユーザーの情報取得
         async initUserObj ( context ) {
-            const fetchURL = 'https://api.github.com/users/shushutona';
+            const fetchURL = `https://api.github.com/users/${ context.state.githubName }`;
+            const response = await fetch( fetchURL );
+            const userObj = await response.json();
 
-            await fetch( fetchURL )
-                .then( ( response ) => {
-                    return response.json();
-                } )
-                .then( ( userObj ) => {
-                    context.commit( 'setUserObj', { userObj } );
-                } );
+            context.commit( 'setUserObj', { userObj } );
 
-            await Promise.resolve( context.dispatch( 'getUserRepos' ) );
-            await Promise.resolve( context.dispatch( 'getLangArray' ) );
+            context.dispatch( 'getCommitLinkArray' );
+            await context.dispatch( 'getUserRepos' );
+            await context.dispatch( 'getLangArray' );
         },
 
         // リポジトリ一覧取得（repos_url）
         async getUserRepos ( context ) {
             const fetchURL = context.state.userObj[ 'repos_url' ];
+            const response = await fetch( fetchURL );
+            const reposArray = await response.json();
 
-            await fetch( fetchURL )
-                .then( ( response ) => {
-                    return response.json();
-                } )
-                .then( ( reposArray ) => {
-                    context.commit( 'setUserRepos', { reposArray } );
-                } );
+            context.commit( 'setUserRepos', { reposArray } );
         },
 
         // 指定リポジトリで使用されている言語一覧
@@ -56,18 +54,52 @@ export default new Vuex.Store( {
 
             for ( let repoObj of context.state.reposArray ) {
                 const fetchURL = repoObj[ 'languages_url' ];
+                const response = await fetch( fetchURL );
+                const jsonData = await response.json();
 
-                await fetch( fetchURL )
-                    .then( ( response ) => {
-                        return response.json();
-                    } )
-                    .then( ( data ) => {
-                        langArray.push( data );
-                    } );
+                langArray.push( jsonData );
             }
 
             context.commit( 'setLangArray', { langArray } );
         },
+
+        async getCommitLinkArray ( context ) {
+            const fetchURL = context.state.userObj[ 'events_url' ].replace( '{/privacy}', '' );
+            const response = await fetch( fetchURL );
+            const responceCommitArray = await response.json();
+
+            const currentCommitArray = [];
+            const loopLimit = responceCommitArray.length;
+
+            for ( let i = 0; i < loopLimit; i++ ) {
+                const commitObj = responceCommitArray[ i ];
+
+                if ( commitObj.type === 'PushEvent') {
+                    currentCommitArray.push( commitObj );
+                }
+
+                if ( currentCommitArray.length === 5 ) {
+                    break;
+                }
+            }
+
+            const commitLinkArray = currentCommitArray.map( ( commitObj, index ) => {
+                const date = new Date( commitObj.created_at );
+                const dateMonth = `${date.getMonth() + 1}`.padStart( 2, 0 );
+                const dateDate = `${ date.getDate() }`.padStart( 2, 0 );
+                const dateHours = `${ date.getHours()}`.padStart( 2, 0 );
+                const dateMinutes = `${ date.getMinutes()}`.padStart( 2, 0 );
+
+                return {
+                    id: index,
+                    dateStr: `${ date.getFullYear() }/${ dateMonth }/${ dateDate } : ${ dateHours }:${ dateMinutes }`,
+                    commitMessageStr: commitObj.payload.commits[ 0 ].message,
+                    repoUrlStr: commitObj.repo.url
+                }
+            } );
+
+            context.commit( 'setCommitLinkArray', { commitLinkArray } );
+        }
     },
     modules: {
     }
