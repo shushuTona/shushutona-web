@@ -3,7 +3,7 @@
         <FirstView>
             <Heading1 :headingText="'Skill'" />
 
-            <p>githubの各リポジトリに記載されているLanguagesの一覧を表示</p>
+            <p>GitHubの各リポジトリに記載されているLanguagesの一覧を表示</p>
         </FirstView>
 
         <Heading2 :headingText="'言語一覧'" />
