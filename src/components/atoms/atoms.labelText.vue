@@ -16,10 +16,11 @@ export default {
 
 <style scoped lang="scss">
 .m-labelText {
-    padding: 4px 8px;
+    padding: 8px 16px;
     display: inline-block;
     color: $MAIN_COLOR;
     border: 1px solid $MAIN_COLOR;
+    line-height: 1;
     text-align: center;
 }
 </style>

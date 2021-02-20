@@ -1,7 +1,7 @@
 <template>
     <div class="m-labelList">
         <ul class="labelList__list">
-            <li v-for="item of itemList"
+            <li v-for="item of labelListArray"
                 class="labelList__item"
                 :key="item.id"
             >
@@ -24,14 +24,22 @@ export default {
     },
     components: {
         LabelText,
+    },
+    computed: {
+        labelListArray() {
+            return this.itemList.map( (item, index) => {
+                return {
+                    id: index,
+                    text: item
+                }
+            } );
+        }
     }
 }
 </script>
 
 <style scoped lang="scss">
 .m-labelList {
-    margin: 16px 0;
-
     .labelList {
         &__list {
             margin: -8px 0 0 -8px;
