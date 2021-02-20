@@ -1,0 +1,17 @@
+[
+    {
+        "id": 0,
+        "productTitle": "shushuTona portfolio site",
+        "reposUrl": "https://github.com/shushuTona/shushutona-web",
+        "productDesc": "このサイト。以前から自分で考えた見た目のサイトを作ってみたかった＆SPAサイト作成の練習をしたかった為作成した。Firebaseはホスティングが簡単で良かった。",
+        "skillList": [
+            "HTML",
+            "SCSS",
+            "Javascript",
+            "Vue.js",
+            "Three.js",
+            "SPA",
+            "Firebase"
+        ]
+    }
+]

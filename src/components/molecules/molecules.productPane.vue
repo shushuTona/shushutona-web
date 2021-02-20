@@ -49,7 +49,7 @@ export default {
 
     .panelArea {
         &__title {
-            margin: 0 0 16px;
+            margin: 0 0 24px;
             padding: 0 0 8px;
             font-size: 2.4rem;
             font-weight: normal;
@@ -67,7 +67,7 @@ export default {
         }
 
         &__hdg {
-            margin: 16px 0 8px;
+            margin: 24px 0 16px;
             padding: 0 0 0 16px;
             font-size: 1.6rem;
             font-weight: normal;

@@ -93,6 +93,11 @@ img {
     max-width: 100%;
 }
 
+select {
+    -webkit-appearance:none;
+    appearance:none;
+}
+
 #app {
     height: 100vh;
     display: grid;
