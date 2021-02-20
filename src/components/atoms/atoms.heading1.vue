@@ -29,6 +29,7 @@ export default {
 
 .m-heading1 {
     padding: 0 0 10px;
+    font-family: "Quicksand", sans-serif;
 
     @include createHeadingValue(3);
 

@@ -40,8 +40,7 @@ body {
     margin: 0;
     padding: 0;
     color: $FONT_COLOR;
-    font-family: "Quicksand", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-    font-display: optional;
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
     font-size: $SP_FONT_BASE;
     line-height: 1.5;
     word-break: break-word;

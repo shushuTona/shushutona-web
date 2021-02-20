@@ -58,6 +58,7 @@ export default {
 <style scoped lang="scss">
 .l-header {
     padding: 0 24px;
+    font-family: "Quicksand", sans-serif;
     position: fixed;
     bottom: 45px;
     right: 0;

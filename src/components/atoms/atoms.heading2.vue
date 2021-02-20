@@ -19,6 +19,7 @@ export default {
 <style lang="scss" scoped>
 .m-heading2 {
     @include createHeadingValue(2);
+    font-weight: normal;
 
     .heading2 {
         &__inner {
