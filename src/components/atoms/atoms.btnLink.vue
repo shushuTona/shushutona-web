@@ -129,6 +129,8 @@ export default {
                 height: 100%;
                 background-color: $MAIN_COLOR;
                 transition: transform $TRANSITION;
+                -webkit-backface-visibility: hidden; // borderがにじむ為
+                backface-visibility: hidden;
                 position: absolute;
                 top: 0;
             }

@@ -17,7 +17,15 @@
         <Table :tableList="tableList" />
 
         <Heading2 :headingText="'Twitter'" />
-        <p>TODO：Twitterのタイムラインを表示する。</p>
+
+        <p>Twitter見てると自分の知らないことがたくさん知れて嬉しいです。（Twitter APIは断念しました。）</p>
+
+        <BtnLink
+            :linkText="'Twitterアカウント'"
+            :linkHref="'https://twitter.com/shushuTona'"
+            :isBlank="true"
+            :isEmphasis="true"
+        />
     </div>
 </template>
 
@@ -26,6 +34,7 @@ import Heading1 from '@/components/atoms/atoms.heading1.vue';
 import Heading2 from '@/components/atoms/atoms.heading2.vue';
 import FirstView from '@/components/atoms/atoms.firstView.vue';
 import Table from '@/components/atoms/atoms.table.vue';
+import BtnLink from '@/components/atoms/atoms.btnLink.vue';
 
 export default {
     name: 'About',
@@ -33,7 +42,8 @@ export default {
         Heading1,
         Heading2,
         FirstView,
-        Table
+        Table,
+        BtnLink
     },
     created() {
         document.title = 'About | shushutona-web';

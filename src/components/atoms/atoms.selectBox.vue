@@ -65,13 +65,14 @@ export default {
             padding: 9px 36px 8px 16px;
             display: block;
             width: 100%;
+            font-size: 1.6rem;
             color: $MAIN_COLOR;
             background-color: transparent;
             border: 1px solid $BORDER_COLOR;
             outline: $MAIN_COLOR;
-            cursor: pointer;
             position: relative;
             z-index: 1;
+            cursor: pointer;
         }
     }
 }
