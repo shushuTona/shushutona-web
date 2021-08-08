@@ -1,6 +1,6 @@
 <template>
     <footer class="l-footer">
-        <small>© 2020 shushutona-web.</small>
+        <small>© 2020 shushuTona-web.</small>
     </footer>
 </template>
 

@@ -42,7 +42,7 @@ export default {
         FirstView
     },
     created() {
-        document.title = 'Skill | shushutona-web';
+        document.title = 'Skill | shushuTona-web';
     },
     data() {
         return {

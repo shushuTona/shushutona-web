@@ -46,7 +46,7 @@ export default {
         BtnLink
     },
     created() {
-        document.title = 'About | shushutona-web';
+        document.title = 'About | shushuTona-web';
     },
     data() {
         return {

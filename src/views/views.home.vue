@@ -1,7 +1,7 @@
 <template>
     <div class="views-home">
         <FirstView>
-            <Heading1 :headingText="'Shushutona-web'" />
+            <Heading1 :headingText="'shushuTona-web'" />
         </FirstView>
 
         <Heading2 :headingText="'最近のGitHub更新履歴'" />
@@ -38,7 +38,7 @@ export default {
         LinkPanelList
     },
     created() {
-        document.title = 'shushutona-web';
+        document.title = 'shushuTona-web';
     },
     computed: {
         commitLinkArray() {

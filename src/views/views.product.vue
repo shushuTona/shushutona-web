@@ -83,7 +83,7 @@ export default {
         }
     },
     created() {
-        document.title = 'Product | shushutona-web';
+        document.title = 'Product | shushuTona-web';
     }
 }
 </script>
