@@ -40,7 +40,7 @@ export default {
     .btnLink {
         &__inner {
             padding: 0;
-            display: inline-block;
+            display: block;
             color: $MAIN_COLOR;
             background-color: #fff;
             border: none;
@@ -119,7 +119,7 @@ export default {
 
         &__innerText {
             padding: 16px 24px 16px;
-            display: inline-block;
+            display: block;
             position: relative;
 
             &::before,

@@ -7,7 +7,8 @@
         </FirstView>
 
         <Heading2 :headingText="'自己紹介'" />
-        <p>現在は都内の事業会社でwebエンジニアとして働いています。最近転職しました。</p>
+        <p>現在都内の事業会社でwebエンジニアとして働いています。最近転職しました。</p>
+        <p>フロントエンド領域が好きです。好きなだけです。</p>
         <p>好きな色は緑。好きな野菜はレタスです。</p>
 
         <Heading2 :headingText="'職務経歴'" />
@@ -15,17 +16,6 @@
         <p>大学4年生の就職活動時にwebの勉強を始めて、以下の経歴で生きてきました。</p>
 
         <Table :tableList="tableList" />
-
-        <Heading2 :headingText="'Twitter'" />
-
-        <p>Twitter見てると自分の知らないことがたくさん知れて嬉しいです。（Twitter APIは断念しました。）</p>
-
-        <BtnLink
-            :linkText="'Twitterアカウント'"
-            :linkHref="'https://twitter.com/shushuTona'"
-            :isBlank="true"
-            :isEmphasis="true"
-        />
     </div>
 </template>
 
@@ -34,7 +24,6 @@ import Heading1 from '@/components/atoms/atoms.heading1.vue';
 import Heading2 from '@/components/atoms/atoms.heading2.vue';
 import FirstView from '@/components/atoms/atoms.firstView.vue';
 import Table from '@/components/atoms/atoms.table.vue';
-import BtnLink from '@/components/atoms/atoms.btnLink.vue';
 
 export default {
     name: 'About',
@@ -42,8 +31,7 @@ export default {
         Heading1,
         Heading2,
         FirstView,
-        Table,
-        BtnLink
+        Table
     },
     created() {
         document.title = 'About | shushuTona-web';

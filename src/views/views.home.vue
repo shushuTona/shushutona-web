@@ -2,6 +2,8 @@
     <div class="views-home">
         <FirstView>
             <Heading1 :headingText="'shushuTona-web'" />
+
+            <p>shushuTonaのポートフォリオサイト</p>
         </FirstView>
 
         <Heading2 :headingText="'最近のGitHub更新履歴'" />
@@ -12,12 +14,7 @@
             :listArray="commitLinkArray"
         />
 
-        <BtnLink
-            :linkText="'GitHubアカウント'"
-            :linkHref="'https://github.com/shushuTona'"
-            :isBlank="true"
-            :isEmphasis="true"
-        />
+        <BtnLinkList :itemList="btnLinkListItem" />
     </div>
 </template>
 
@@ -25,8 +22,8 @@
 import Heading1 from '@/components/atoms/atoms.heading1.vue';
 import Heading2 from '@/components/atoms/atoms.heading2.vue';
 import FirstView from '@/components/atoms/atoms.firstView.vue';
-import BtnLink from '@/components/atoms/atoms.btnLink.vue';
 import LinkPanelList from '@/components/molecules/molecules.linkPanelList.vue';
+import BtnLinkList from '@/components/molecules/molecules.btnLinkList.vue';
 
 export default {
     name: 'Home',
@@ -34,11 +31,29 @@ export default {
         Heading1,
         Heading2,
         FirstView,
-        BtnLink,
-        LinkPanelList
+        LinkPanelList,
+        BtnLinkList
     },
     created() {
         document.title = 'shushuTona-web';
+    },
+    data() {
+        return {
+            btnLinkListItem: [
+                {
+                    linkText: 'Twitterアカウント',
+                    linkHref: 'https://twitter.com/shushuTona',
+                    isBlank: true,
+                    isEmphasis: true
+                },
+                {
+                    linkText: 'GitHubアカウント',
+                    linkHref: 'https://github.com/shushuTona',
+                    isBlank: true,
+                    isEmphasis: true
+                },
+            ]
+        }
     },
     computed: {
         commitLinkArray() {
