@@ -78,12 +78,14 @@ export default {
         }
 
         &__col {
-            &:nth-of-type(1) {
-                width: 30%;
-            }
+            @include breakPC() {
+                &:nth-of-type(1) {
+                    width: 30%;
+                }
 
-            &:nth-of-type(2) {
-                width: 70%;
+                &:nth-of-type(2) {
+                    width: 70%;
+                }
             }
         }
     }

@@ -148,6 +148,7 @@ export default {
 
                 &.of-transition {
                     transition: transform $TRANSITION;
+                    transition-delay: .3s;
                 }
             }
 
@@ -360,6 +361,7 @@ export default {
 
             &__inner {
                 transform: translateX(0);
+                transition-delay: 0s;
             }
 
             &__navItem {
