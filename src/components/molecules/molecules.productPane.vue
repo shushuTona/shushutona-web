@@ -2,6 +2,9 @@
     <div class="m-panelArea">
         <h2 class="panelArea__title">{{ panelContents.productTitle }}</h2>
 
+        <h3 class="panelArea__hdg">URL</h3>
+        <a :href="panelContents.productUrl" target="_blank">{{ panelContents.productUrl }}</a>
+
         <h3 class="panelArea__hdg">作ったもの説明</h3>
         <p>{{ panelContents.productDesc }}</p>
 

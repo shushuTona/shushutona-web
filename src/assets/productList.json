@@ -2,6 +2,7 @@
     {
         "id": 0,
         "productTitle": "shushuTona portfolio site",
+        "productUrl": "https://shushutona-web.firebaseapp.com/",
         "reposUrl": "https://github.com/shushuTona/shushutona-web",
         "productDesc": "このサイト。以前から自分で考えた見た目のサイトを作ってみたかった＆SPAサイト作成の練習をしたかった為作成した。Firebaseはホスティングが簡単で良かった。",
         "skillList": [
@@ -9,9 +10,23 @@
             "SCSS",
             "Javascript",
             "Vue.js",
-            "Three.js",
             "SPA",
             "PWA",
+            "Firebase"
+        ]
+    },
+    {
+        "id": 1,
+        "productTitle": "ガシガシ目標達成",
+        "productUrl": "https://gashigashitask.firebaseapp.com/",
+        "reposUrl": "https://github.com/shushuTona/shushuTona_practice/tree/master/react/hooks_ts_practice",
+        "productDesc": "React Hooksの素振りを兼ねたもの。よくあるToDoListはただタスクを消化するのが目的になっていて、そもそもタスクが存在している目標性が薄いと感じて、目標とタスクを紐づける形式にした。Reactは面白い。",
+        "skillList": [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "React",
+            "SPA",
             "Firebase"
         ]
     }
