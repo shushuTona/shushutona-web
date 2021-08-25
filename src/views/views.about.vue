@@ -15,7 +15,7 @@
 
         <p>大学4年生の就職活動時にwebの勉強を始めて、以下の経歴で生きてきました。</p>
 
-        <Table :tableList="tableList" />
+        <Table :tableList="tableList" :colNumList="colNumList" />
     </div>
 </template>
 
@@ -38,6 +38,7 @@ export default {
     },
     data() {
         return {
+            colNumList: [ 30, 70 ],
             tableList: [
                 {
                     id: 0,

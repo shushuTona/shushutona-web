@@ -1,0 +1,67 @@
+[
+    {
+        "skillName": "HTML",
+        "skillYears": "3年4ヶ月",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "CSS・SASS",
+        "skillYears": "3年4ヶ月",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "Javascript",
+        "skillYears": "3年4ヶ月",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "jQuery",
+        "skillYears": "3年4ヶ月",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "Vue.js",
+        "skillYears": "2年",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "React",
+        "skillYears": "6ヶ月",
+        "skillDesc": "個人的に楽しんでいる"
+    },
+    {
+        "skillName": "TypeScript",
+        "skillYears": "1年6ヶ月",
+        "skillDesc": "業務で使用経験有"
+    },
+    {
+        "skillName": "PHP",
+        "skillYears": "1年",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "Laravel",
+        "skillYears": "6ヶ月",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "Git",
+        "skillYears": "3年4ヶ月",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "gulp",
+        "skillYears": "3年",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "webpack",
+        "skillYears": "2年",
+        "skillDesc": "業務で使用中"
+    },
+    {
+        "skillName": "docker",
+        "skillYears": "6ヶ月",
+        "skillDesc": "ローカル環境の作成"
+    }
+]

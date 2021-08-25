@@ -2,8 +2,11 @@
     <div class="m-table">
         <table class="table__inner">
             <colgroup>
-                <col class="table__col">
-                <col class="table__col">
+                <col
+                    v-for="item of colItemList"
+                    :key="item.id"
+                    :class="'table__col' + ` is-${item.num}`"
+                >
             </colgroup>
             <tbody>
                 <tr
@@ -30,6 +33,20 @@ export default {
         tableList: {
             type: Array,
             required: true
+        },
+        colNumList: {
+            type: Array,
+            required: true
+        }
+    },
+    computed: {
+        colItemList() {
+            return this.colNumList.map( (colNumItem, index) => {
+                return {
+                    id: index,
+                    num: colNumItem
+                }
+            })
         }
     }
 }
@@ -64,27 +81,31 @@ export default {
                 text-align: left;
 
                 @include breakPC() {
-                    padding: 16px 8px 16px 0;
+                    padding: 16px 0;
                 }
             }
 
             td {
-                padding: 8px 0 16px;
+                padding: 8px 0;
+
+                @include breakSP() {
+                    &:last-of-type {
+                        padding: 8px 0 16px;
+                    }
+                }
 
                 @include breakPC() {
-                    padding: 16px 0 16px 8px;
+                    padding: 16px 0;
                 }
             }
         }
 
         &__col {
             @include breakPC() {
-                &:nth-of-type(1) {
-                    width: 30%;
-                }
-
-                &:nth-of-type(2) {
-                    width: 70%;
+                @for $i from 1 through 10 {
+                    &.is-#{ $i * 10 } {
+                        width: #{ $i * 10% };
+                    }
                 }
             }
         }

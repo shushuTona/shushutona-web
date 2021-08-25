@@ -9,7 +9,6 @@ export default new Vuex.Store( {
         userObj: {},
         reposArray: [],
         reposUrlNameObj: {},
-        langArray: [],
         commitLinkArray: []
     },
     mutations: {
@@ -21,9 +20,6 @@ export default new Vuex.Store( {
         },
         setReposUrlNameObj ( state, payload ) {
             state.reposUrlNameObj = payload.reposUrlNameObj
-        },
-        setLangArray ( state, payload ) {
-            state.langArray = payload.langArray
         },
         setCommitLinkArray ( state, payload ) {
             state.commitLinkArray = payload.commitLinkArray
@@ -40,7 +36,6 @@ export default new Vuex.Store( {
 
             await context.dispatch( 'getUserRepos' );
             await context.dispatch( 'getCommitLinkArray' );
-            await context.dispatch( 'getLangArray' );
         },
 
         // リポジトリ一覧取得（repos_url）&リポジトリ名：URLのオブジェクトを生成
@@ -56,21 +51,6 @@ export default new Vuex.Store( {
 
             context.commit( 'setReposUrlNameObj', { reposUrlNameObj } );
             context.commit( 'setUserRepos', { reposArray } );
-        },
-
-        // 指定リポジトリで使用されている言語一覧
-        async getLangArray ( context ) {
-            const langArray = [];
-
-            for ( let repoObj of context.state.reposArray ) {
-                const fetchURL = repoObj[ 'languages_url' ];
-                const response = await fetch( fetchURL );
-                const jsonData = await response.json();
-
-                langArray.push( jsonData );
-            }
-
-            context.commit( 'setLangArray', { langArray } );
         },
 
         async getCommitLinkArray ( context ) {
@@ -112,7 +92,5 @@ export default new Vuex.Store( {
 
             context.commit( 'setCommitLinkArray', { commitLinkArray } );
         }
-    },
-    modules: {
     }
 } );
